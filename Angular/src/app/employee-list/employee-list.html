@@ -1,0 +1,44 @@
+<div class="container" style="padding: 30px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+
+  <!-- Show it when there is no employee -->
+  <div class="no-data text-center" *ngIf="Employee.length == 0" style="padding: 50px 20px; background-color: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; font-size: 1.2rem;">
+    <p style="color: #856404; margin-bottom: 20px;">There is no employee added yet!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-employee">Add Employee</button>
+  </div>
+
+  <!-- Employees list table, it hides when there is no employee -->
+  <div *ngIf="Employee.length !== 0">
+    <h3 class="mb-3 text-center">Employees List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered" style="background-color: #ffffff; border-radius: 8px; overflow: hidden;">
+        <thead>
+          <tr style="background-color: #007bff; color: white; text-align: center;">
+            <th scope="col">User Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of Employee">
+            <td style="text-align: center; vertical-align: middle;">{{employee.id}}</td>
+            <td style="text-align: center; vertical-align: middle;">{{employee.name}}</td>
+            <td style="text-align: center; vertical-align: middle;">{{employee.email}}</td>
+            <td style="text-align: center; vertical-align: middle;">{{employee.phone}}</td>
+            <td style="text-align: center; vertical-align: middle;">
+              <span class="edit" routerLink="/employee-edit/{{employee.id}}" style="cursor: pointer; margin: 0 8px; padding: 5px 10px; border-radius: 4px; font-weight: 500; background-color: #17a2b8; color: white;" 
+                onmouseover="this.style.backgroundColor='#138496'" 
+                onmouseout="this.style.backgroundColor='#17a2b8'">Edit</span>
+              <span class="delete" (click)="deleteEmployee(employee.id)" style="cursor: pointer; margin: 0 8px; padding: 5px 10px; border-radius: 4px; font-weight: 500; background-color: #dc3545; color: white;" 
+                onmouseover="this.style.backgroundColor='#c82333'" 
+                onmouseout="this.style.backgroundColor='#dc3545'">Delete</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

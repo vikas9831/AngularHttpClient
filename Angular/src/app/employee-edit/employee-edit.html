@@ -1,0 +1,27 @@
+<div class="container" style="padding: 30px; background-color: #f4f6f9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 600px;">
+  <div class="col-md-12">
+    
+    <h3 class="mb-4 text-center" style="color: #343a40;">Update Employee</h3>
+
+    <div class="form-group" style="margin-bottom: 20px;">
+      <input type="text" [(ngModel)]="employeeData.name" class="form-control" placeholder="Name"
+        style="padding: 12px; border-radius: 6px; border: 1px solid #ced4da;">
+    </div>
+
+    <div class="form-group" style="margin-bottom: 20px;">
+      <input type="text" [(ngModel)]="employeeData.email" class="form-control" placeholder="Email"
+        style="padding: 12px; border-radius: 6px; border: 1px solid #ced4da;">
+    </div>
+
+    <div class="form-group" style="margin-bottom: 30px;">
+      <input type="text" [(ngModel)]="employeeData.phone" class="form-control" placeholder="Phone"
+        style="padding: 12px; border-radius: 6px; border: 1px solid #ced4da;">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updateEmployee()"
+        style="width: 100%; padding: 12px; font-size: 1.1rem; border-radius: 6px;">Update Employee</button>
+    </div>
+    
+  </div>
+</div>
